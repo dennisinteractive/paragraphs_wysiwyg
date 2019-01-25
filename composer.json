@@ -5,6 +5,8 @@
   "license": "GPL-2.0",
   "require": {
     "drupal/core": "~8",
-    "drupal/paragraphs": "~1.0"
+    "drupal/paragraphs": "~1.0",
+    "drupal/config_ignore": "^2.1",
+    "drupal/paragraphs_entity_embed": "^1.0@alpha"
   }
 }

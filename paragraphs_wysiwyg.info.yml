@@ -1,0 +1,10 @@
+name: Paragraphs WYSIWYG
+type: module
+description: 'WYSIWYG UI for paragraphs.'
+core: 8.x
+package: Paragraphs
+
+dependencies:
+  - drupal:paragraphs
+  - drupal:entity_embed
+  - drupal:paragraphs_entity_embed
