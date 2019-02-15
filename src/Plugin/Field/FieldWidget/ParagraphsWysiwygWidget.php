@@ -64,11 +64,12 @@ class ParagraphsWysiwygWidget extends ParagraphsWidget {
 
     $elements['paragraphs_wysiwyg'] = [
       '#type' => 'text_format',
-      '#title' => 'Body',
-      '#format' => 'full_html',
-      '#field_name' => 'Body',
+      '#title' => 'Body', //@todo allow this to be configured
+      '#format' => 'paragraphs_wysiwyg',
+      '#field_name' => 'Body', //@todo allow this to be configured
       '#default_value' => $text,
     ];
+
     return $elements;
   }
 }
