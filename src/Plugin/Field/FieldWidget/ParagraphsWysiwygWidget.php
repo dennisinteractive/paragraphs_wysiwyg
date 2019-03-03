@@ -57,7 +57,7 @@ class ParagraphsWysiwygWidget extends ParagraphsWidget {
           $text .= $paragraph->get('field_text')->getValue()[0]['value'];
         }
         else {
-          $text .= '<drupal-paragraph data-embed-button="paragraphs" data-entity-label="Paragraphs" data-paragraph-id="' . $paragraph->uuid() . '"></drupal-paragraph>';
+          $text .= '<drupal-entity data-embed-button="paragraphs_wysiwyg" data-entity-embed-display="view_mode:paragraph.preview" data-entity-type="paragraph" data-entity-uuid="' . $paragraph->uuid() . '"></drupal-entity>';
         }
       }
     }
@@ -65,7 +65,7 @@ class ParagraphsWysiwygWidget extends ParagraphsWidget {
     $elements['paragraphs_wysiwyg'] = [
       '#type' => 'text_format',
       '#title' => 'Body', //@todo allow this to be configured
-      '#format' => 'paragraphs_wysiwyg',
+      '#format' => 'paragraphs_wysiwyg', //@todo allow this to be configured
       '#field_name' => 'Body', //@todo allow this to be configured
       '#default_value' => $text,
     ];

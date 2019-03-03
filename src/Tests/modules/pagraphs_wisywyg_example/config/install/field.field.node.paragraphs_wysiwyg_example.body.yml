@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.paragraphs_wysiwyg_example
+  module:
+    - text
+id: node.paragraphs_wysiwyg_example.body
+field_name: body
+entity_type: node
+bundle: paragraphs_wysiwyg_example
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

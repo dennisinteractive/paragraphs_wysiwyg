@@ -1,10 +1,12 @@
 name: Paragraphs WYSIWYG
 type: module
-description: 'WYSIWYG UI for paragraphs.'
+description: 'Paragraphs selector for Entity Browser and integration with Entity Embed Wysiwyg'
 core: 8.x
 package: Paragraphs
-
 dependencies:
-  - drupal:paragraphs
-  - drupal:entity_embed
-  - drupal:paragraphs_entity_embed
+  - paragraphs:paragraphs
+  - entity:entity
+  - entity_embed:entity_embed
+  - entity_browser:entity_browser
+  - entity_browser_entity_form:entity_browser_entity_form
+  - inline_entity_form:inline_entity_form

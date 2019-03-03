@@ -1,6 +1,141 @@
 <?php
-
-/**
- * @file
- * Contains paragraphs_wysiwyg.module
- */
+//
+///**
+// * @file
+// * Contains paragraphs_wysiwyg.module
+// */
+////
+/////**
+//// * Implements hook_entity_type_build().
+//// *
+//// * Adds a custom Form Class to Paragraph Embed entities, so we can add custom
+//// * actions and potentially override normal Entity CRUD operations.
+//// */
+////function paragraphs_wysiwyg_entity_type_build(array &$entity_types) {
+////  if (isset($entity_types['paragraphs_type'])) {
+////    $entity_types['paragraphs_type']->setFormClass('select_paragraph_type_form', 'Drupal\paragraphs_wysiwyg\Plugin\EntityBrowser\Widget');
+////  }
+////}
+//
+/////**
+//// * Implements hook_preprocess_HOOK().
+//// *
+//// * On displaying the Paragraph Embed add/edit forms in iframe hide all page
+//// * elements except that what is inside the content area.
+//// */
+////function paragraphs_wysiwyg_preprocess_html(&$variables) {
+////  if (
+////    !empty($variables['is_admin']) &&
+////    in_array(\Drupal::routeMatch()->getRouteName(), [
+////      'paragraphs_wysiwyg.add_form',
+////      'paragraphs_wysiwyg.edit_form',
+////    ])) {
+////    if (isset($variables['page_top'])) {
+////      $variables['page_top']['#access'] = FALSE;
+////    }
+////    if (isset($variables['page_bottom'])) {
+////      $variables['page_bottom']['#access'] = FALSE;
+////    }
+////    if (isset($variables['page'])) {
+////      foreach (array_keys($variables['page']) as $key) {
+////        if (strpos($key, '#') !== 0 && $key !== 'content') {
+////          //$variables['page'][$key]['#access'] = FALSE;
+////        }
+////      }
+////      $variables['page']['breadcrumb']['#access'] = FALSE;
+////    }
+////  }
+////}
+//
+////@todo clean up these hooks
+///**
+// * Alter the information provided in \Drupal\entity_browser\Annotation\EntityBrowserDisplay.
+// *
+// * @param array $displays
+// *   The array of display plugins, keyed on the machine-readable name.
+// */
+//function paragraphs_wysiwyg_entity_browser_display_info_alter(array &$displays) {
+//  $displays['modal_display'] = [
+//    'id' => 'modal_display',
+//    'label' => t('Superb fancy stuff!'),
+//    'description' => '',
+//  ];
+////  kint($displays);
+//}
+//
+///**
+// * Alter the information provided in \Drupal\entity_browser\Annotation\EntityBrowserWidget.
+// *
+// * @param array $widgets
+// *   The array of widget plugins, keyed on the machine-readable name.
+// */
+//function paragraphs_wysiwyg_entity_browser_widget_info_alter(array &$widgets) {
+//  $widgets['view_widget'] = [
+//    'id' => 'view_widget',
+//    'label' => t('Views FTW!'),
+//    'description' => '',
+//  ];
+////  kint($widgets);
+//}
+//
+///**
+// * Alter the information provided in \Drupal\entity_browser\Annotation\SelectionDisplay.
+// *
+// * @param array $selection_displays
+// *   The array of selection display plugins, keyed on the machine-readable name.
+// */
+//function paragraphs_wysiwyg_entity_browser_selection_display_info_alter(array &$selection_displays) {
+//  $selection_displays['no_selection'] = [
+//    'id' => 'no_selection',
+//    'label' => t('Nothing!'),
+//    'description' => '',
+//  ];
+////  kint($selection_displays);
+//}
+//
+///**
+// * Alter the information provided in \Drupal\entity_browser\Annotation\EntityBrowserWidgetSelector.
+// *
+// * @param array $widget_selectors
+// *   The array of widget selector plugins, keyed on the machine-readable name.
+// */
+//function paragraphs_wysiwyg_entity_browser_widget_selector_info_alter(array &$widget_selectors) {
+//  $widget_selectors['tab_selector'] = [
+//    'id' => 'tab_selector',
+//    'label' => t('Tabs are for winners'),
+//    'description' => '',
+//  ];
+////  kint($widget_selectors);
+//}
+//
+///**
+// * Alter the information provided in \Drupal\entity_browser\Annotation\EntityBrowserFieldWidgetDisplay.
+// *
+// * @param array $field_displays
+// *   The array of field widget display plugins, keyed on the machine-readable
+// *   name.
+// */
+//function paragraphs_wysiwyg_entity_browser_field_widget_display_info_alter(array &$field_displays) {
+//  $field_displays['rendered_entity'] = [
+//    'id' => 'rendered_entity',
+//    'label' => t('Entity render system FTW'),
+//    'description' => '',
+//  ];
+//  //kint($field_displays);
+//}
+//
+///**
+// * Alter the information provided in \Drupal\entity_browser\Annotation\EntityBrowserWidgetValidation.
+// *
+// * @param array $validation_plugins
+// *   The array of widget validation plugins, keyed on the machine-readable
+// *   name.
+// */
+//function paragraphs_wysiwyg_entity_browser_widget_validation_info_alter(array &$validation_plugins) {
+//  $validation_plugins['not_null'] = [
+//    'id' => 'not_null',
+//    'label' => t('xNot null fabulous validator'),
+//    'description' => '',
+//  ];
+////  kint($validation_plugins);
+//}

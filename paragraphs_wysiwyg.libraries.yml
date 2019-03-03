@@ -1,0 +1,9 @@
+dialog:
+  version: VERSION
+  css:
+    theme:
+      css/paragraphs_wysiwyg.dialog.css: {}
+  js:
+    js/paragraphs_wysiwyg.dialog.js: {}
+  dependencies:
+    - core/jquery

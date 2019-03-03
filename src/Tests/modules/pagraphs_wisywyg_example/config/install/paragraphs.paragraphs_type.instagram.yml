@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: wkrzTAOZto8fVb0ZKOYhwN_lYYH3o4uyt_7_uwH7h-g
+id: instagram
+label: Instagram
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

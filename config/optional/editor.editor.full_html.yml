@@ -2,10 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.paragraphs_wysiwyg
+    - filter.format.full_html
   module:
     - ckeditor
-format: paragraphs_wysiwyg
+_core:
+  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+format: full_html
 editor: ckeditor
 settings:
   toolbar:
@@ -16,8 +18,13 @@ settings:
           items:
             - Bold
             - Italic
+            - Strike
+            - Superscript
+            - Subscript
+            - '-'
+            - RemoveFormat
         -
-          name: Links
+          name: Linking
           items:
             - DrupalLink
             - DrupalUnlink
@@ -31,22 +38,28 @@ settings:
           items:
             - Blockquote
             - DrupalImage
+            - Table
+            - HorizontalRule
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
         -
           name: Tools
           items:
+            - ShowBlocks
             - Source
-            - paragraphs_wysiwyg
         -
           name: Entities
           items:
-            - node
+            - paragraphs_wysiwyg
   plugins:
     language:
       language_list: un
     stylescombo:
       styles: ''
 image_upload:
-  status: false
+  status: true
   scheme: public
   directory: inline-images
   max_size: ''

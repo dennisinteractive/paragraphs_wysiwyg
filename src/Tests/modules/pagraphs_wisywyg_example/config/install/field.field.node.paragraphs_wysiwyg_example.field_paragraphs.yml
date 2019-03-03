@@ -1,0 +1,69 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.paragraphs_wysiwyg_example
+    - paragraphs.paragraphs_type.gallery
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.instagram
+    - paragraphs.paragraphs_type.pinterest
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.twitter
+  module:
+    - entity_reference_revisions
+id: node.paragraphs_wysiwyg_example.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: paragraphs_wysiwyg_example
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gallery: gallery
+      image: image
+      instagram: instagram
+      pinterest: pinterest
+      quote: quote
+      text: text
+      twitter: twitter
+    target_bundles_drag_drop:
+      from_library:
+        weight: 11
+        enabled: false
+      gallery:
+        enabled: true
+        weight: 12
+      image:
+        enabled: true
+        weight: 13
+      instagram:
+        enabled: true
+        weight: 14
+      link:
+        weight: 15
+        enabled: false
+      pinterest:
+        enabled: true
+        weight: 16
+      quote:
+        enabled: true
+        weight: 17
+      text:
+        enabled: true
+        weight: 18
+      twitter:
+        enabled: true
+        weight: 19
+      video:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions
