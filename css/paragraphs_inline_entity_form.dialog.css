@@ -4,13 +4,7 @@
  *
  * @see core/themes/classy/css/components/dialog.css
  * @see core/themes/bartik/css/components/ui-dialog.css
- * @todo Clean up unused CSS
- *
  */
-
-a[href^="#browser"] {
-    display: none;
-}
 
 #entity_browser_iframe_paragraph_items {
     border: solid 1px #ccc;
