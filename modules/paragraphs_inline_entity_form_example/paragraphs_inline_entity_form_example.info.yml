@@ -1,0 +1,7 @@
+name: Paragraphs Inline Entity Form Test
+type: module
+description: 'Provides Test scaffolds for Paragraphs Inline Entity Form Test module.'
+core: 8.x
+package: Paragraphs
+dependencies:
+  - paragraphs_inline_entity_form:paragraphs_inline_entity_form

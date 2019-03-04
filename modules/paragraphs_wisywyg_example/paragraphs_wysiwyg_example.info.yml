@@ -1,7 +1,0 @@
-name: Paragraphs WYSIWYG Example
-type: module
-description: 'Example of WYSIWYG UI for paragraphs.'
-core: 8.x
-package: Paragraphs
-dependencies:
-  - paragraphs_wysiwyg:paragraphs_wysiwyg

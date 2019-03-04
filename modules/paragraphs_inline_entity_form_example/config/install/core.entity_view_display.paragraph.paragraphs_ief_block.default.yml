@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraphs_ief_block.field_block
+    - paragraphs.paragraphs_type.paragraphs_ief_block
+  module:
+    - entity_reference_revisions
+id: paragraph.paragraphs_ief_block.default
+targetEntityType: paragraph
+bundle: paragraphs_ief_block
+mode: default
+content:
+  field_block:
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden: {  }

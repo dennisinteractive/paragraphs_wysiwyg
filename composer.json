@@ -1,6 +1,6 @@
 {
-  "name": "drupal/paragraphs_wysiwyg",
-  "description": "WYSIWYG UI for paragraphs.",
+  "name": "drupal/paragraphs_inline_entity_form",
+  "description": "Extends Inline Entity Form to add support for Paragraphs",
   "type": "drupal-module",
   "license": "GPL-2.0",
   "require": {

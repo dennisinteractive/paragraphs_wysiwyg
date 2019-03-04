@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\paragraphs_wysiwyg\Plugin\EntityBrowser\Widget;
+namespace Drupal\paragraphs_inline_entity_form\Plugin\EntityBrowser\Widget;
 
 use Drupal\entity_browser_entity_form\Plugin\EntityBrowser\Widget\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * A wrapper for EntityForm to provide a two step form where on the first step
  * the user can select the Entity type and on the second step, to create content
- * @todo maybe this could be its own module called Entity Browser Paragraphs Selector
+ *
  * @EntityBrowserWidget(
  *   id = "paragraph_entity_form",
  *   label = @Translation("Paragraph form"),
@@ -50,17 +50,13 @@ class ParagraphEntityForm extends EntityForm {
     if (empty($this->configuration['entity_type']) || empty($this->configuration['form_mode'])) {
       return ['#markup' => $this->t('The settings for %label widget are not configured correctly.', ['%label' => $this->label()])];
     }
-    syslog(5, 'DDD getform START');
-//kint($form_state->getValues());
-    //kint($this->configuration['bundle']);
+
     // Check if we need to show the content type selector form or the entity create form
     if (!empty($form_state->getUserInput()['selected_bundle'])) {
       $this->configuration['bundle'] = $form_state->getUserInput()['selected_bundle'];
-      syslog(5, 'DDD bundle selected: ' . $this->configuration['bundle']);
     }
-    //if ($this->configuration['bundle'] == '0' && empty($form_state->getValues())) {
+
     if ($this->configuration['bundle'] == '0') {
-      syslog(5, 'DDD select entity form');
       $form = $this->entitySelectorForm($original_form, $form_state, $additional_widget_parameters);
       return $form;
     }
@@ -69,8 +65,6 @@ class ParagraphEntityForm extends EntityForm {
       $this->handleWidgetContext($form_state->get(['entity_browser', 'widget_context']));
     }
 
-    syslog(5, 'DDD get parent form');
-    syslog(5, 'DDD bundle ' . $this->configuration['bundle']);
     $form = parent::getForm($original_form, $form_state, $additional_widget_parameters);
 
     $form['#submit'] = [
@@ -97,7 +91,6 @@ class ParagraphEntityForm extends EntityForm {
       '#form_mode' => $this->configuration['form_mode'],
     ];
 
-    syslog(5, 'DDD showing entity form END');
     return $form;
   }
 
@@ -116,7 +109,7 @@ class ParagraphEntityForm extends EntityForm {
     $form['actions'] = [
       '#type' => 'actions',
     ];
-    $form['#attached']['library'][] = 'paragraphs_wysiwyg/dialog';
+    $form['#attached']['library'][] = 'paragraphs_inline_entity_form/dialog';
 
     if ($path_parts[0] == 'entity-embed') {
       $embed_button = $this->entityTypeManager->getStorage('embed_button')->load($path_parts[3]);
@@ -126,7 +119,7 @@ class ParagraphEntityForm extends EntityForm {
     $paragraphs_type_storage = $this->entityTypeManager->getStorage('paragraphs_type');
 
     //@todo copy icon for entity embed, see entity_embed_update_8001()
-    $default_icon = drupal_get_path('module', 'paragraphs_wysiwyg') . '/images/puzzle.svg';
+    $default_icon = drupal_get_path('module', 'paragraphs_inline_entity_form') . '/images/paragraph_thumb.png';
 
     foreach ($bundles as $bundle => $label) {
       $icon_url = $default_icon;

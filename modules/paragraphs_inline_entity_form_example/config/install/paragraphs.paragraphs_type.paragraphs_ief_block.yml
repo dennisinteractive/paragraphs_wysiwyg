@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:9e70ef01-e2eb-4f37-acaa-4b667c7c6e3f'
+id: paragraphs_ief_block
+label: Block
+icon_uuid: 9e70ef01-e2eb-4f37-acaa-4b667c7c6e3f
+description: ''
+behavior_plugins: {  }
