@@ -45,6 +45,7 @@ class ParagraphEntityForm extends EntityForm {
 
   /**
    * {@inheritdoc}
+   * @todo fix the edit form
    */
   public function getForm(array &$original_form, FormStateInterface $form_state, array $additional_widget_parameters) {
     if (empty($this->configuration['entity_type']) || empty($this->configuration['form_mode'])) {
