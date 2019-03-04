@@ -1,0 +1,15 @@
+<?php
+/**
+ * @file Module.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function paragraphs_inline_entity_form_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  /* @var Drupal\Core\Entity\FieldableEntityInterface $entity */
+  $formObject = $form_state->getFormObject();
+  if ($formObject instanceof \Drupal\Core\Entity\EntityFormInterface) {
+    $form['#attached']['library'][] = 'paragraphs_inline_entity_form/dialog';
+  }
+}
