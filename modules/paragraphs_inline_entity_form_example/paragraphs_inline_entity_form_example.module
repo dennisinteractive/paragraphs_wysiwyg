@@ -27,12 +27,12 @@ function paragraphs_inline_entity_form_example_install() {
     $filename = $type . '_thumb.jpg';
     $icon = drupal_get_path('module', 'paragraphs_inline_entity_form_example') . '/images/' . $filename;
     $data = file_get_contents($icon);
-    $file = file_save_data($data, 'public://' . $filename, FILE_EXISTS_REPLACE);
-    // Add the file entity to the paragraphs type as its icon.
-    $paragraphs_type = 'paragraphs_ief_' . $type;
-    if ($paragraphs_type_entity = ParagraphsType::load($paragraphs_type)) {
-      $paragraphs_type_entity->set('icon_uuid', $file->uuid());
-      $paragraphs_type_entity->save();
+    if ($file = file_save_data($data, 'public://' . $filename, FILE_EXISTS_REPLACE)) {
+      $paragraphs_type = 'paragraphs_ief_' . $type;
+      if ($paragraphs_type_entity = ParagraphsType::load($paragraphs_type)) {
+        $paragraphs_type_entity->set('icon_uuid', $file->uuid());
+        $paragraphs_type_entity->save();
+      }
     }
   }
 }
