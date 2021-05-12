@@ -1,5 +1,5 @@
 {
-  "name": "drupal/paragraphs_wysiwyg",
+  "name": "dennisdigital/paragraphs_wysiwyg",
   "description": "WYSIWYG UI for paragraphs.",
   "type": "drupal-module",
   "license": "GPL-2.0",
