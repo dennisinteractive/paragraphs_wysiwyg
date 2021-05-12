@@ -1,5 +1,5 @@
 {
-  "name": "drupal/paragraphs_inline_entity_form",
+  "name": "dennisdigital/paragraphs_inline_entity_form",
   "description": "Extends Inline Entity Form to add support for Paragraphs",
   "type": "drupal-module",
   "license": "GPL-2.0",
